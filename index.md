@@ -1,5 +1,7 @@
 # C++ Lessons
 
-- [[module1]]
-- [[module2]]
-- [[module3]]
+- [[module1]] C++ Basics
+- [[module2]] C++ Basics: Functions and Files
+- [[module3]] Debugging C++ Programs
+- [[module4]] Fundamental Data Types
+
