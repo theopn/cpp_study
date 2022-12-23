@@ -1,8 +1,12 @@
 #include <iostream>
-int main() {
-  std::cout << "Hello"
-               " world!"
-            << '\n'; // Prints out Hello world!\n
 
+#define ENABLE_DEBUGGING 1
+#define DBG_STREAM                                                             \
+  if (!ENABLE_DEBUGGING) {                                                     \
+  } else                                                                       \
+    std::cerr
+
+int main() {
+  DBG_STREAM << "Debugging enabled\n";
   return 0;
 }
