@@ -22,7 +22,7 @@ int main() {
 
 Conditional compilation:
 
-```
+```cpp
 #include <iostream>
 
 #define PRINT_JOE
