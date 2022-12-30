@@ -65,7 +65,7 @@ square.h:
 #ifndef _SQUARE_H_
 #define _SQUARE_H_
 
-int get_square_sides() {
+int getSquareSides() {
   return 4;
 }
 

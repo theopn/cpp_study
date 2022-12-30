@@ -1,6 +1,6 @@
 #include <iostream>
-void doNothing(int &) // Trick the compiler into thinking variable x is used
-{}
+void doNothing(int &) {} // Trick the compiler into thinking variable x is used
+
 int main() {
   int x; // this variable is defined bu uninitialized
   doNothing(

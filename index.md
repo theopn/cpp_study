@@ -5,4 +5,7 @@
 - [[module3]] Debugging C++ Programs
 - [[module4]] Fundamental Data Types
 - [[module5]] Operators
-- [[module6]]
+- [[module6]] Scope, Duration, and Linkage
+...
+-[[module9]] Compound Types: References and Pointers
+

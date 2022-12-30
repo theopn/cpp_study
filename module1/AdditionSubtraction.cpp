@@ -1,5 +1,8 @@
 #include <iostream>
 
+/**
+ * Module 1 Final Project
+ */
 int main(int argc, char *argv[]) {
   std::cout << "Enter an intger: ";
   int num{};

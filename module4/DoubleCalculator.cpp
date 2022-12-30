@@ -1,6 +1,6 @@
 #include <iostream>
 
-double get_double_val() {
+double getDoubleVal() {
   std::cout << "Enter a double value: ";
   double x{};
   std::cin >> x;
@@ -9,9 +9,9 @@ double get_double_val() {
 
 int main() {
   double x{};
-  x = get_double_val();
+  x = getDoubleVal();
   double y{};
-  y = get_double_val();
+  y = getDoubleVal();
 
   std::cout << "Enter one of the following: +, -, *, or /: ";
   char operation{};

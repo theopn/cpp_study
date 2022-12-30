@@ -5,12 +5,12 @@ int main() {
   double height{};
   std::cin >> height;
   int time{0};
-  double height_fallen{0};
-  while (height > height_fallen) {
+  double heightFallen{0};
+  while (height > heightFallen) {
     std::cout << "At " << time
-              << " seconds, the ball is at height: " << height - height_fallen
+              << " seconds, the ball is at height: " << height - heightFallen
               << " meters" << '\n';
-    height_fallen = GRAVITY * time * time / 2;
+    heightFallen = GRAVITY * time * time / 2;
     time++;
   }
   std::cout << "At " << time + 1 << " seconds, the ball is on the ground"

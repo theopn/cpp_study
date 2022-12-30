@@ -1,4 +1,6 @@
-# 5.3 — Modulus and Exponentiation
+# Module 5 - Operators
+
+## 5.3 — Modulus and Exponentiation
 
 - Float exponent: `std::pow(x, y)`
 
@@ -70,27 +72,27 @@ It is okay to compare low-precision (few significant digit) float (`GRAVITY {9.8
 #include <algorithm> // std::max
 #include <cmath> // for std::abs()
 // epsilon is an absolute value
-bool approximately_equal_abs(double a, double b, double abs_epsilon) {
+bool approximatelyEqualAbs(double a, double b, double absEpsilon) {
   // if the distance between a and b is less than absEpsilon, then a and b are "close enough"
-  return std::abs(a - b) <= abs_epsilon;
+  return std::abs(a - b) <= absEpsilon;
 }
 
 // return true if the difference between a and b is within epsilon percent of the larger of a and b
-bool approximately_equal_rel(double a, double b, double rel_epsilon) {
+bool approximatelyEqualRel(double a, double b, double relEpsilon) {
   // Take percentage close (0.001, 0.002, etc) as the rel_epsilon
-  return (std::abs(a - b) <= (std::max(std::abs(a), std::abs(b)) * rel_epsilon));
+  return (std::abs(a - b) <= (std::max(std::abs(a), std::abs(b)) * relEpsilon));
 }
 
 // Best version
 // return true if the difference between a and b is less than absEpsilon, or within relEpsilon percent of the larger of a and b
-bool approximately_equal_abs_rel(double a, double b, double abs_epsilon, double rel_epsilon) {
+bool approximatelyEqualAbsRel(double a, double b, double absEpsilon, double relEpsilon) {
   // Check if the numbers are really close -- needed when comparing numbers near zero.
   double diff{ std::abs(a - b) };
-  if (diff <= abs_epsilon)
+  if (diff <= absEpsilon)
       return true;
 
   // Otherwise fall back to Knuth's algorithm
-  return (diff <= (std::max(std::abs(a), std::abs(b)) * rel_epsilon));
+  return (diff <= (std::max(std::abs(a), std::abs(b)) * relEpsilon));
 }
 ```
 

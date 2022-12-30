@@ -1,5 +1,5 @@
 CXX = g++ -std=c++20
-objects = module2_final.o io.o
+objects = main.o io.o
 .PHONY: all clean # In case there are files named "all" or "clean"
 
 all: module2_final
@@ -7,8 +7,8 @@ all: module2_final
 module2_final: $(objects)
 	$(CXX) -o module2_final $(objects)
 
-module2_final.o: module2_final.cpp
-	$(CXX) -c module2_final.cpp
+main.o: main.cpp
+	$(CXX) -c main.cpp
 
 io.o: io.cpp io.h
 	$(CXX) -c io.cpp

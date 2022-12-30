@@ -33,9 +33,9 @@ int main() {
   unsigned int u { 1 };
 
   if (s < u) // -1 is implicitly converted to 4294967295, and 4294967295 < 1 is false
-      std::cout << "-1 is less than 1\n";
+    std::cout << "-1 is less than 1\n";
   else
-      std::cout << "1 is less than -1\n"; // this statement executes
+    std::cout << "1 is less than -1\n"; // this statement executes
 
   return 0;
 }
@@ -177,14 +177,14 @@ int main() {
 
 ```cpp
 #include <iostream>
-int get_number() {
+int getNumber() {
   int y { };
   std::cin >> y;
   return y;
 }
 int main() {
   constexpr double k_earth_gravity { 4.8 + 5.0 }; // This is okay, value known at the compile time
-  constexpr int k_regular_const { get_number() }; // Not okay, value not known at the compile time. Use regular const
+  constexpr int k_regular_const { getNumber() }; // Not okay, value not known at the compile time. Use regular const
   return 0;
 }
 ```
@@ -232,27 +232,27 @@ int main() {
 /*
  * Remember that String object is passed by copy only. Use String view (read only) when passing it as a param
  */
-void print_new_line(std::string_view str) {
+void printNewLine(std::string_view str) {
   std::cout << str << '\n';
 }
 
 /*
  * Worse versison
  */
-void print_new_line_worse(std::string str) {
+void worsePrintNewLine(std::string str) {
   std::cout << str << '\n';
 }
 
 int main() {
   using namespace std::literals; // easiest way to access the s and sv suffixes
 
-  print_new_line("Hello from string view"sv);
+  printNewLine("Hello from string view"sv);
 
   // Implicit conversion from std::string to std::string_view
-  print_new_line("Hello from string implcitly converted to SV"s);
+  printNewLine("Hello from string implcitly converted to SV"s);
 
   // String view cannot be implcitly converted to write enabled string
-  print_new_line_worse(static_cast<std::string>("Hello from string view explictly converted to string"sv));
+  worsePrintNewLine(static_cast<std::string>("Hello from string view explictly converted to string"sv));
   return 0;
 }
 ```
