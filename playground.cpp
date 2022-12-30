@@ -1,12 +1,24 @@
 #include <iostream>
-#include <string>      // for std::string
-#include <string_view> // for std::string_view
+
+int func(int x, int y) { return x * y; }
+
+namespace foo {
+int func(int x, int y) { return x + y; }
+} // namespace foo
+
+namespace bar {
+int func(int x, int y) { return x - y; }
+
+void funcfunc() {
+  std::cout << ::func(10, 10) << '\n'; // Global func is used -> 10 * 10
+  std::cout << bar::func(10, 10)
+            << '\n'; // Same as bar::func(10, 10) -> 10 - 10
+}
+} // namespace bar
 
 int main() {
-  int x{5};
-  std::cout << (x != 6) ? x : 7;
-  std::cout << '\n';
-  std::cout << ((x != 6) ? (x) : (7));
+  std::cout << ::func(5, 5) << '\n';    // 25
+  std::cout << foo::func(5, 5) << '\n'; // 10
 
-  return 0;
+  bar::funcfunc();
 }

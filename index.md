@@ -5,4 +5,4 @@
 - [[module3]] Debugging C++ Programs
 - [[module4]] Fundamental Data Types
 - [[module5]] Operators
-
+- [[module6]]
